@@ -1,0 +1,802 @@
+{
+    "data": [
+        {
+            "ayahNumber": 7,
+            "id": 1,
+            "surahArabic": "الْفَاتِحَة",
+            "surahTranslation": "Surah al-Fātihah",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 286,
+            "id": 2,
+            "surahArabic": "الْبَقَرَة",
+            "surahTranslation": "Surah al-Baƙọrah",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 200,
+            "id": 3,
+            "surahArabic": "آل عمران",
+            "surahTranslation": "Surah Āli-‘Imrọ̄n",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 176,
+            "id": 4,
+            "surahArabic": "النِّسَاء",
+            "surahTranslation": "Surah an-Nisā’",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 120,
+            "id": 5,
+            "surahArabic": "المائدة",
+            "surahTranslation": "Surah al-Mọ̄’idah",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 165,
+            "id": 6,
+            "surahArabic": "الأنْعَام  ",
+            "surahTranslation": "Surah al-’Ani‘ām",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 206,
+            "id": 7,
+            "surahArabic": "الأعْراف",
+            "surahTranslation": "Surah Al-’a‘rọ̄f  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 75,
+            "id": 8,
+            "surahArabic": "الأنْفَال",
+            "surahTranslation": "Surah Al-’anfāl  ",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 129,
+            "id": 9,
+            "surahArabic": "التَّوْبَة",
+            "surahTranslation": "Surah at-Taobah  ",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 109,
+            "id": 10,
+            "surahArabic": "يُونُس",
+            "surahTranslation": "Surah Yūnus  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 123,
+            "id": 11,
+            "surahArabic": "هُود",
+            "surahTranslation": "Surah Hūd",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 111,
+            "id": 12,
+            "surahArabic": "يُوسُف",
+            "surahTranslation": "Surah Yūsuf",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 43,
+            "id": 13,
+            "surahArabic": "الرَّعْد",
+            "surahTranslation": "Surah ar-Ra‘d  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 52,
+            "id": 14,
+            "surahArabic": "إِبْرَاهِيم  ",
+            "surahTranslation": "Surah ’Ibrọ̄hīm",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 99,
+            "id": 15,
+            "surahArabic": "الْحِجْر",
+            "surahTranslation": "Surah al-Hijr  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 128,
+            "id": 16,
+            "surahArabic": "النَّحْل",
+            "surahTranslation": "Surah an-Nahl  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 111,
+            "id": 17,
+            "surahArabic": "الإِسْرَاء",
+            "surahTranslation": "Surah al-’Isrọ̄’",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 110,
+            "id": 18,
+            "surahArabic": "الْكَهْف",
+            "surahTranslation": "Surah al-Kahf  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 98,
+            "id": 19,
+            "surahArabic": "مَرْيَم  ",
+            "surahTranslation": "Surah Mọryam",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 135,
+            "id": 20,
+            "surahArabic": "طه",
+            "surahTranslation": "Surah Tọ̄hā",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 112,
+            "id": 21,
+            "surahArabic": "الأَنْبِياء",
+            "surahTranslation": "Surah Al-’Anbiyā’",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 78,
+            "id": 22,
+            "surahArabic": "الْحَجّ",
+            "surahTranslation": "Surah Al-Hajj  ",
+            "type": "Madinah & Makkah"
+        },
+        {
+            "ayahNumber": 118,
+            "id": 23,
+            "surahArabic": "الْمُؤْمِنُون",
+            "surahTranslation": "Surah al-Mu’minūn",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 64,
+            "id": 24,
+            "surahArabic": "النُّور",
+            "surahTranslation": "Surah an-Nūr  ",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 77,
+            "id": 25,
+            "surahArabic": "الْفُرْقَان",
+            "surahTranslation": "Surah al-Furƙọ̄n",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 227,
+            "id": 26,
+            "surahArabic": "الشُّعَرَاء   ",
+            "surahTranslation": "Surah aṣ-Ṣu‘arọ̄’",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 93,
+            "id": 27,
+            "surahArabic": "النَّمْل",
+            "surahTranslation": "Surah an-Naml  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 88,
+            "id": 28,
+            "surahArabic": "الْقَصَص",
+            "surahTranslation": "Surah al-Ƙọsọs  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 69,
+            "id": 29,
+            "surahArabic": "الْعَنْكَبُوت",
+            "surahTranslation": "Surah al-‘Ankabūt  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 60,
+            "id": 30,
+            "surahArabic": "الرُّوم",
+            "surahTranslation": "Surah ar-Rūm  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 34,
+            "id": 31,
+            "surahArabic": "لُقْمَان",
+            "surahTranslation": "Surah Luƙmọ̄n",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 30,
+            "id": 32,
+            "surahArabic": "السَّجْدَة",
+            "surahTranslation": "Surah as-Sajdah  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 73,
+            "id": 33,
+            "surahArabic": "الْأَحْزَاب",
+            "surahTranslation": "Surah al-’Ahzāb  ",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 54,
+            "id": 34,
+            "surahArabic": "سَبَإ",
+            "surahTranslation": "Surah Saba’",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 45,
+            "id": 35,
+            "surahArabic": "فَاطِر  ",
+            "surahTranslation": "Surah Fātir",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 83,
+            "id": 36,
+            "surahArabic": "يسٓ",
+            "surahTranslation": "Surah Yāsīn",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 182,
+            "id": 37,
+            "surahArabic": "الصَّافَّات",
+            "surahTranslation": "Surah as-Sọ̄ffāt",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 88,
+            "id": 38,
+            "surahArabic": "صٓ",
+            "surahTranslation": "Surah Sọ̄d",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 75,
+            "id": 39,
+            "surahArabic": "الزُّمَر",
+            "surahTranslation": "Surah az-Zumọr",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 85,
+            "id": 40,
+            "surahArabic": "غَافِر",
+            "surahTranslation": "Surah Gọ̄fir",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 54,
+            "id": 41,
+            "surahArabic": "فُصِّلَتْ",
+            "surahTranslation": "Surah Fussilat",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 53,
+            "id": 42,
+            "surahArabic": "الشُّورَى",
+            "surahTranslation": "Surah aṣ-Ṣūrọ̄",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 89,
+            "id": 43,
+            "surahArabic": "الزُّخْرُف",
+            "surahTranslation": "Surah az-Zukhruf",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 59,
+            "id": 44,
+            "surahArabic": "الدُّخَان",
+            "surahTranslation": "Surah ad-Dukhān",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 37,
+            "id": 45,
+            "surahArabic": "الْجَاثِيَة",
+            "surahTranslation": "Surah al-Jāthiyah",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 35,
+            "id": 46,
+            "surahArabic": "الأحْقَاف",
+            "surahTranslation": "Surah al-’Ahƙọ̄f",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 38,
+            "id": 47,
+            "surahArabic": "مُحَمَّد",
+            "surahTranslation": "Surah Muhammad",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 29,
+            "id": 48,
+            "surahArabic": "الْفَتْح",
+            "surahTranslation": "Surah al-Fat-h",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 18,
+            "id": 49,
+            "surahArabic": "الْحُجُرَات",
+            "surahTranslation": "Surah al-Hujurọ̄t",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 45,
+            "id": 50,
+            "surahArabic": "قٓ",
+            "surahTranslation": "Surah Ƙọ̄f",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 60,
+            "id": 51,
+            "surahArabic": "الذَّٰرِيَٰت",
+            "surahTranslation": "Surah ath-Thāriyāt",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 49,
+            "id": 52,
+            "surahArabic": "الطُّور   ",
+            "surahTranslation": "Surah at-Tūr  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 62,
+            "id": 53,
+            "surahArabic": "النَّجْم",
+            "surahTranslation": "Surah an-Najm",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 55,
+            "id": 54,
+            "surahArabic": "الْقَمَر",
+            "surahTranslation": "Surah al-Ƙọmọr",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 78,
+            "id": 55,
+            "surahArabic": "الرَّحْمَٰن",
+            "surahTranslation": "Surah ar-Rahmān  ",
+            "type": "Madinah & Mekkah"
+        },
+        {
+            "ayahNumber": 96,
+            "id": 56,
+            "surahArabic": "الْوَاقِعَة",
+            "surahTranslation": "Surah al-Wāƙi‘ah",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 29,
+            "id": 57,
+            "surahArabic": "الْحَدِيد",
+            "surahTranslation": "Surah al-Hadīd",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 22,
+            "id": 58,
+            "surahArabic": "الْمُجَادِلَة",
+            "surahTranslation": "Surah al-Mujādilah",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 24,
+            "id": 59,
+            "surahArabic": "الْحَشْر",
+            "surahTranslation": "Surah al-Haṣr",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 13,
+            "id": 60,
+            "surahArabic": "الْمُمْتَحَنَة",
+            "surahTranslation": "Surah al-Mumtahanah  ",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 14,
+            "id": 61,
+            "surahArabic": "الصَّفّ",
+            "surahTranslation": "Surah as-Sọff",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 11,
+            "id": 62,
+            "surahArabic": "الْجُمْعَة",
+            "surahTranslation": "Surah al-Jum‘ah",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 11,
+            "id": 63,
+            "surahArabic": "الْمُنَافِقُون",
+            "surahTranslation": "Surah al-Munāfiƙūn  ",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 18,
+            "id": 64,
+            "surahArabic": "التَّغَابُن",
+            "surahTranslation": "Surah at-Tagọ̄bun  ",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 12,
+            "id": 65,
+            "surahArabic": "الطَّلاق",
+            "surahTranslation": "Surah at-Tọlāƙ  ",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 12,
+            "id": 66,
+            "surahArabic": "التَّحْرِيم",
+            "surahTranslation": "Surah at-Tahrīm",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 30,
+            "id": 67,
+            "surahArabic": "الْمُلْك",
+            "surahTranslation": "Surah al-Mulk",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 52,
+            "id": 68,
+            "surahArabic": "الْقَلَم",
+            "surahTranslation": "Surah al-Ƙọlam  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 52,
+            "id": 69,
+            "surahArabic": "الْحَآقَّةُ",
+            "surahTranslation": "Surah al-Hāƙƙọh  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 44,
+            "id": 70,
+            "surahArabic": "الْمَعَارِج",
+            "surahTranslation": "Surah al-Mọ‘ārij  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 28,
+            "id": 71,
+            "surahArabic": "نُوۡح",
+            "surahTranslation": "Surah Nūh",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 28,
+            "id": 72,
+            "surahArabic": "الْجِنّ",
+            "surahTranslation": "Surah al-Jinn",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 20,
+            "id": 73,
+            "surahArabic": "الْمُزَّمِّل",
+            "surahTranslation": "Surah al-Muzzammil",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 56,
+            "id": 74,
+            "surahArabic": "الْمُدَّثِّر",
+            "surahTranslation": "Surah al-Muddaththir",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 40,
+            "id": 75,
+            "surahArabic": "الْقِيَٰمَة",
+            "surahTranslation": "Surah al-Ƙiyāmọh",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 31,
+            "id": 76,
+            "surahArabic": "الْإِنسَٰن",
+            "surahTranslation": "Surah al-’Insān",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 50,
+            "id": 77,
+            "surahArabic": "الْمُرْسَلَٰت",
+            "surahTranslation": "Surah al-Mursalāt  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 40,
+            "id": 78,
+            "surahArabic": "النَّبَإ",
+            "surahTranslation": "Surah an-Naba’",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 46,
+            "id": 79,
+            "surahArabic": "النَّـٰزِعَـٰت",
+            "surahTranslation": "Surah an-Nāzi‘āt  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 42,
+            "id": 80,
+            "surahArabic": "عَبَسَ",
+            "surahTranslation": "Surah ‘Abas  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 29,
+            "id": 81,
+            "surahArabic": "التّكوير",
+            "surahTranslation": "Surah at-Takwīr  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 19,
+            "id": 82,
+            "surahArabic": "الْإنفِطَار  ",
+            "surahTranslation": "Surah al-’Infitọ̄r  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 36,
+            "id": 83,
+            "surahArabic": "الْمُطَفِّفِينَ",
+            "surahTranslation": "Surah al-Mutọffifīn",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 25,
+            "id": 84,
+            "surahArabic": "الْإنْشِقَاق",
+            "surahTranslation": "Surah al-’Inṣiƙọ̄ƙ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 22,
+            "id": 85,
+            "surahArabic": "الْبُرُوج  ",
+            "surahTranslation": "Surah al-Burūj  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 17,
+            "id": 86,
+            "surahArabic": "الطَّارِق",
+            "surahTranslation": "Surah at-Tọ̄riƙ  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 19,
+            "id": 87,
+            "surahArabic": "الْأَعْلَى",
+            "surahTranslation": "Surah al-’A‘lā  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 26,
+            "id": 88,
+            "surahArabic": "الْغَـٰشِيَة",
+            "surahTranslation": "Surah al-Gọ̄ṣiyah",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 30,
+            "id": 89,
+            "surahArabic": "الْفَجْر",
+            "surahTranslation": "Surah al-Fajr",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 20,
+            "id": 90,
+            "surahArabic": "الْبَلَد",
+            "surahTranslation": "Surah al-Balad  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 15,
+            "id": 91,
+            "surahArabic": "الشَّمْس",
+            "surahTranslation": "Surah aṣ-Ṣams  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 21,
+            "id": 92,
+            "surahArabic": "اللَّيْل",
+            "surahTranslation": "Surah al-Lael  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 11,
+            "id": 93,
+            "surahArabic": "الضُّحَىٰ",
+            "surahTranslation": "Surah ad-Duhā",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 8,
+            "id": 94,
+            "surahArabic": "الشَّرْح",
+            "surahTranslation": "Surah aṣ-Ṣarh",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 8,
+            "id": 95,
+            "surahArabic": "التِّين",
+            "surahTranslation": "Surah at-Tīn",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 19,
+            "id": 96,
+            "surahArabic": "الْعَلَق",
+            "surahTranslation": "Surah al-‘Alaƙ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 5,
+            "id": 97,
+            "surahArabic": "الْقَدْر",
+            "surahTranslation": "Surah al-Ƙọdr  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 8,
+            "id": 98,
+            "surahArabic": "الْبَيِّنَة",
+            "surahTranslation": "Surah al-Bayyinah  ",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 8,
+            "id": 99,
+            "surahArabic": "الزَّلْزَلَة",
+            "surahTranslation": "Surah az-Zalzalah",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 11,
+            "id": 100,
+            "surahArabic": "الْعَـٰدِيَــٰت",
+            "surahTranslation": "Surah al-‘Ādiyāt",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 11,
+            "id": 101,
+            "surahArabic": "الْقَارِعَة",
+            "surahTranslation": "Surah al-Ƙọ̄ri‘ah",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 8,
+            "id": 102,
+            "surahArabic": "التَّكَاثُر",
+            "surahTranslation": "Surah at-Takāthur",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 3,
+            "id": 103,
+            "surahArabic": "الْعَصْر",
+            "surahTranslation": "Surah al-‘Asr",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 9,
+            "id": 104,
+            "surahArabic": "الْهُمَزَة",
+            "surahTranslation": "Surah al-Humọzah",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 5,
+            "id": 105,
+            "surahArabic": "الْفِيل",
+            "surahTranslation": "Surah al-Fīl",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 4,
+            "id": 106,
+            "surahArabic": "قُرَيْش",
+            "surahTranslation": "Surah Ƙuraeṣ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 7,
+            "id": 107,
+            "surahArabic": "الماعون",
+            "surahTranslation": "Surah al-Mọ̄‘ūn  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 3,
+            "id": 108,
+            "surahArabic": "الْكَوْثَر",
+            "surahTranslation": "Surah al-Kaothar  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 6,
+            "id": 109,
+            "surahArabic": "الْكَـٰفِرُون",
+            "surahTranslation": "Surah al-Kāfirūn",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 3,
+            "id": 110,
+            "surahArabic": "النَّصْر",
+            "surahTranslation": "Surah an-Nasr",
+            "type": "Madinah"
+        },
+        {
+            "ayahNumber": 5,
+            "id": 111,
+            "surahArabic": "الْمَسَد",
+            "surahTranslation": "Surah al-Mọsad  ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 4,
+            "id": 112,
+            "surahArabic": "الإِخْلاص",
+            "surahTranslation": "Surah al-’Ikhlās",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 5,
+            "id": 113,
+            "surahArabic": "الْفَلَق",
+            "surahTranslation": "Surah al-Falaƙ",
+            "type": "Mekkah"
+        },
+        {
+            "ayahNumber": 6,
+            "id": 114,
+            "surahArabic": "النَّاس",
+            "surahTranslation": "Surah an-Nās  ",
+            "type": "Mekkah"
+        }
+    ]
+}
