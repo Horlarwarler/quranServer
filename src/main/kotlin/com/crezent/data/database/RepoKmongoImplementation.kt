@@ -18,13 +18,38 @@ class RepoKmongoImplementation(
     private val quranDatabase = database.getCollection<QuranDatabaseModel>()
     private val versionDatabase = database.getCollection<VersionDatabaseModel>()
 
-    override suspend fun getCurrentVersion(): Double {
+    override suspend fun getVersion(): Double {
         return versionDatabase.find().first()?.versionCode ?: 1.0
 
     }
 
-    override suspend fun getAllAyah(): List<AyahModel> {
-        return quranDatabase.find().toList().convertToModel()
+    override suspend fun getQuran(surahId: Int?, verseId: Int?): List<AyahModel> {
+        return  when {
+            surahId != null && verseId != null -> {
+                quranDatabase
+                    .find()
+                    .filter(
+                        AyahModel::surahId eq surahId
+                    )
+                    .filter(
+                        AyahModel::verseId eq verseId
+                    )
+                    .toList()
+                    .convertToModel()
+            }
+            surahId != null -> {
+                quranDatabase
+                    .find()
+                    .filter(
+                        AyahModel::surahId eq surahId
+                    )
+                    .toList()
+                    .convertToModel()
+            }
+            else -> {
+                quranDatabase.find().toList().convertToModel()
+            }
+        }
     }
 
     override suspend fun updateQuran(updateQuran: List<AyahModel>) {
@@ -56,11 +81,11 @@ class RepoKmongoImplementation(
 
     }
 
-    override suspend fun getAllSurah(): List<SurahModel> {
+    override suspend fun getSurah(): List<SurahModel> {
         TODO("Not yet implemented")
     }
 
-    override suspend fun getAyah(uniqueId: Int): AyahModel {
-        TODO("Not yet implemented")
-    }
+//    override suspend fun getAyah(uniqueId: Int): AyahModel {
+//        TODO("Not yet implemented")
+//    }
 }

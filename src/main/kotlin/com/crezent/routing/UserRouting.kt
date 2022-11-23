@@ -12,9 +12,9 @@ import io.ktor.server.routing.*
 fun Routing.userRouting(
     quranInterfaceRepo: QuranInterfaceRepo
 ){
-   get("/currentversion"){
+   get("/version"){
        try {
-           val currentVersion = quranInterfaceRepo.getCurrentVersion()
+           val currentVersion = quranInterfaceRepo.getVersion()
            val versionCode = VersionModel(versionCode = currentVersion).versionCode
            call.respond(
                HttpStatusCode.OK, VersionModel(versionCode = versionCode)
@@ -26,10 +26,16 @@ fun Routing.userRouting(
        }
 
    }
-    get("/updatedquran"){
+    get("/quran"){
         try {
-            val quranModel =quranInterfaceRepo.getAllAyah()
-            call.respond(HttpStatusCode.OK, QuranResponseModel(quran = quranModel))
+            val surah = call.request.queryParameters["surahId"]?.toInt()
+            val ayah = call.request.queryParameters["ayahId"]?.toInt()
+            val quran =quranInterfaceRepo.getQuran(surah, ayah)
+            if(quran.size == 1){
+                call.respond(HttpStatusCode.OK, QuranResponseModel(quran = quran[0]))
+                return@get
+            }
+            call.respond(HttpStatusCode.OK, QuranResponseModel(quran = quran))
         }
         catch (e:Exception){
             val errorMessage = e.message?:"Unknown Error "
@@ -37,9 +43,9 @@ fun Routing.userRouting(
         }
 
     }
-    get("/allsurah"){
+    get("/surah"){
         try {
-            val allSurah = quranInterfaceRepo.getAllSurah()
+            val allSurah = quranInterfaceRepo.getSurah()
             call.respond(HttpStatusCode.OK, SurahResponseModel(surah = allSurah))
         }
         catch (e:Exception){
@@ -47,18 +53,20 @@ fun Routing.userRouting(
             call.respond(HttpStatusCode.BadRequest, errorMessage)
         }
     }
-    get("ayah/{ayahId}"){
-        try {
-            val ayahId = call.parameters["ayahId"]?.toInt()?: kotlin.run {
-                call.respond(HttpStatusCode.BadRequest, "Ayah Id is required")
-                return@get
-            }
-            val ayah = quranInterfaceRepo.getAyah(ayahId)
-            call.respond(HttpStatusCode.OK, ayah)
-        }
-        catch (e:Exception){
-            val errorMessage = e.message?:"Unknown Error "
-            call.respond(HttpStatusCode.BadRequest, errorMessage)
-        }
-    }
+
+    //Remove the route
+//    get("ayah/{ayahId}"){
+//        try {
+//            val ayahId = call.parameters["ayahId"]?.toInt()?: kotlin.run {
+//                call.respond(HttpStatusCode.BadRequest, "Ayah Id is required")
+//                return@get
+//            }
+//            val ayah = quranInterfaceRepo.getAyah(ayahId)
+//            call.respond(HttpStatusCode.OK, ayah)
+//        }
+//        catch (e:Exception){
+//            val errorMessage = e.message?:"Unknown Error "
+//            call.respond(HttpStatusCode.BadRequest, errorMessage)
+//        }
+//    }
 }

@@ -22,7 +22,7 @@ fun Routing.adminRouting(
 
 
    authenticate {
-       put("/updatequran") {
+       put("/update") {
            try {
                val receivedUpdated = call.receive<List<AyahModel>>()
                quranInterfaceRepo.updateQuran(receivedUpdated)

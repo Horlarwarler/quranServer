@@ -1,6 +1,5 @@
 package com.crezent.data.Json
 
-import com.crezent.Util.findAyah
 import com.crezent.Util.roundUp
 import com.crezent.Util.updateQuran
 import com.crezent.data.FileHelper.JsonHelperInterface
@@ -19,7 +18,7 @@ class RepoJsonImplementation(
     private val surahFileName = "files/surah.json"
     private val surahSerializer = SurahModel.serializer()
 
-    override suspend fun getCurrentVersion(): Double {
+    override suspend fun getVersion(): Double {
 
         val versionJson = jsonHelperInterface.readFromJsonFile(
             versionJsonFileName,
@@ -28,16 +27,33 @@ class RepoJsonImplementation(
         return  versionJson.versionCode
     }
 
-    override suspend fun getAllAyah(): List<AyahModel> {
-        return jsonHelperInterface.readFromJsonFile(
+    override suspend fun getQuran(surahId: Int?, verseId: Int?): List<AyahModel> {
+        val quran = jsonHelperInterface.readFromJsonFile(
             quranJsonFileName,
             quranSerializer
         )
+        return when{
+            surahId != null && verseId != null ->{
+                quran.filter {
+                    it.surahId == surahId && it.verseId == verseId
+                }
+            }
+            surahId != null ->{
+                quran.filter {
+                    it.surahId == surahId
+                }
+            }
+            else -> {
+                quran
+            }
+        }
+
+
     }
 
     override suspend fun updateQuran(updateQuran: List<AyahModel>) {
 
-        val currentQuranJson = getAllAyah()
+        val currentQuranJson = getQuran()
         val latestQuran = currentQuranJson.updateQuran(updateQuran)
         jsonHelperInterface.writeToJsonFile(
             quranJsonFileName,
@@ -48,7 +64,7 @@ class RepoJsonImplementation(
     }
 
     private suspend fun updateVersion(){
-        val currentVersion = getCurrentVersion()
+        val currentVersion = getVersion()
         // 1.0 + 0.1
         val latestVersion = (currentVersion + 0.1).roundUp()
         val versionModel = VersionModel(
@@ -63,15 +79,15 @@ class RepoJsonImplementation(
 
     }
 
-    override suspend fun getAllSurah(): List<SurahModel> {
+    override suspend fun getSurah(): List<SurahModel> {
         return jsonHelperInterface.readFromJsonFile(
             fileName = surahFileName,
             contentSerializer = surahSerializer
         )
     }
 
-    override suspend fun getAyah(uniqueId: Int): AyahModel {
-        val allAyah = getAllAyah()
-        return allAyah.findAyah(uniqueId)
-    }
+//    override suspend fun getAyah(uniqueId: Int): AyahModel {
+//        val allAyah = getAllAyah()
+//        return allAyah.findAyah(uniqueId)
+//    }
 }
