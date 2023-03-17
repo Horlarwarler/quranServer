@@ -54,19 +54,4 @@ fun Routing.userRouting(
         }
     }
 
-    //Remove the route
-//    get("ayah/{ayahId}"){
-//        try {
-//            val ayahId = call.parameters["ayahId"]?.toInt()?: kotlin.run {
-//                call.respond(HttpStatusCode.BadRequest, "Ayah Id is required")
-//                return@get
-//            }
-//            val ayah = quranInterfaceRepo.getAyah(ayahId)
-//            call.respond(HttpStatusCode.OK, ayah)
-//        }
-//        catch (e:Exception){
-//            val errorMessage = e.message?:"Unknown Error "
-//            call.respond(HttpStatusCode.BadRequest, errorMessage)
-//        }
-//    }
 }

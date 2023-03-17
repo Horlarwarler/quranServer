@@ -55,7 +55,7 @@ fun Routing.adminRouting(
                name = "username",
                value = userModel.username
            )
-           val secretKey = System.getenv("Secret_Key")!!
+           val secretKey = System.getenv("SECRET_KEY")!!
            val domain = "https://jwt-provider-domain/"
            val audience = "jwt-audience"
            val issuer = "jwt-issuer"

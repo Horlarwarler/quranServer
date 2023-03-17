@@ -15,7 +15,7 @@ fun Application.configureSecurity() {
     val issuer = "jwt-issuer"
     val realmValue = "ktor sample app"
     val secretKey = System.getenv("SECRET_KEY")!!
-    val envUsername = System.getenv("USER_NAME")!!
+    //val envUsername = System.getenv("USER_NAME")!!
     val config = JwtConfig(
         audience = audience,
         secretKey = secretKey,
