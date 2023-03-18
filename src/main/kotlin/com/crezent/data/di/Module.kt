@@ -24,6 +24,7 @@ import org.litote.kmongo.reactivestreams.KMongo
 
 val module = module {
 
+    val token = System.getenv("ACCESS_TOKEN")!!
     single {
         val password = System.getenv("MONGO_PASSWORD")
         val databaseName = "QuranDatabase"
@@ -41,7 +42,8 @@ val module = module {
                 bearer {
                     loadTokens {
                         // Load tokens from a local storage and return them as the 'BearerTokens' instance
-                        BearerTokens("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","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")
+
+                        BearerTokens(token, "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")
                     }
                 }
             }
