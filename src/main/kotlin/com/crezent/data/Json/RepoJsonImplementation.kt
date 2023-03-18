@@ -24,7 +24,7 @@ class RepoJsonImplementation(
             versionJsonFileName,
             versionSerializer
         ).first()
-        return  versionJson.versionCode
+        return  versionJson.version.toDouble()
     }
 
     override suspend fun getQuran(surahId: Int?, verseId: Int?): List<AyahModel> {
@@ -68,7 +68,7 @@ class RepoJsonImplementation(
         // 1.0 + 0.1
         val latestVersion = (currentVersion + 0.1).roundUp()
         val versionModel = VersionModel(
-            versionCode = latestVersion
+            version = latestVersion
         )
         val versions = listOf(versionModel)
         jsonHelperInterface.writeToJsonFile(

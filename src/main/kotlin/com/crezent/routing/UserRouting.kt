@@ -2,7 +2,7 @@ package com.crezent.routing
 
 import com.crezent.data.repository.QuranInterfaceRepo
 import com.crezent.domain.model.QuranResponseModel
-import com.crezent.domain.model.SurahResponseModel
+import com.crezent.domain.model.Surahs
 import com.crezent.domain.model.VersionModel
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -15,9 +15,9 @@ fun Routing.userRouting(
    get("/version"){
        try {
            val currentVersion = quranInterfaceRepo.getVersion()
-           val versionCode = VersionModel(versionCode = currentVersion).versionCode
+           val version = VersionModel(version = currentVersion).version
            call.respond(
-               HttpStatusCode.OK, VersionModel(versionCode = versionCode)
+               HttpStatusCode.OK, VersionModel(version = version)
            )
        }
        catch (e:Exception){
@@ -46,7 +46,7 @@ fun Routing.userRouting(
     get("/surah"){
         try {
             val allSurah = quranInterfaceRepo.getSurah()
-            call.respond(HttpStatusCode.OK, SurahResponseModel(surah = allSurah))
+            call.respond(HttpStatusCode.OK, Surahs(data = allSurah))
         }
         catch (e:Exception){
             val errorMessage = e.message?:"Unknown Error "

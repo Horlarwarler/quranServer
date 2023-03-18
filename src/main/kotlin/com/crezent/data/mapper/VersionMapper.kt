@@ -10,5 +10,5 @@ fun VersionDatabaseModel.convertToModel():VersionModel{
 }
 
 fun VersionModel.convertToDatabase():VersionDatabaseModel{
-    return  VersionDatabaseModel(versionCode)
+    return  VersionDatabaseModel(version)
 }

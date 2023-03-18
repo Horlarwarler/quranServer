@@ -32,13 +32,19 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
+    implementation("io.ktor:ktor-client-content-negotiation:2.1.3")
+    implementation("io.ktor:ktor-serialization-gson:2.1.3")
+    implementation("io.ktor:ktor-client-auth:2.1.3")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 
 
     // koin
     implementation ("io.insert-koin:koin-ktor:$koin_version")
+    implementation("io.ktor:ktor-client-core:$ktor_version")
     runtimeOnly("io.insert-koin:koin-core:$koin_version")
+    implementation("io.ktor:ktor-client-cio:$ktor_version")
+
 
 
     //Kmongo

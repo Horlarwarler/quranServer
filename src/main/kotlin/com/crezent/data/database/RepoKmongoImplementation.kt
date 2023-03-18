@@ -66,7 +66,7 @@ class RepoKmongoImplementation(
     private suspend fun updateVersionCode(){
         val currentVersion = versionDatabase.find().first()?: kotlin.run {
             val newVersion = VersionModel(
-                versionCode = 1.0
+                version = 1.0
             )
             versionDatabase.insertOne(newVersion.convertToDatabase())
             return

@@ -4,5 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class VersionModel(
-    val versionCode: Double
+    val version: Double,
+    val inherit: Boolean = true
 )

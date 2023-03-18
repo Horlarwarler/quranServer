@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
-data class SurahResponseModel(
-    val surah: List<SurahModel>
+data class Ayahs(
+    val data: List<AyahModel>
 )
