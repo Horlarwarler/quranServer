@@ -8,15 +8,12 @@ import com.crezent.jwt.JwtImplementation
 import com.crezent.jwt.JwtInterface
 import io.ktor.client.*
 import io.ktor.client.engine.cio.*
+import io.ktor.client.plugins.*
 import io.ktor.client.plugins.auth.*
 import io.ktor.client.plugins.auth.providers.*
-
-import io.ktor.client.plugins.cache.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.http.*
-import io.ktor.serialization.gson.*
 import io.ktor.serialization.kotlinx.json.*
-import io.ktor.server.application.*
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
 import org.litote.kmongo.coroutine.coroutine
@@ -25,6 +22,7 @@ import org.litote.kmongo.reactivestreams.KMongo
 val module = module {
 
     val token = System.getenv("ACCESS_TOKEN")!!
+    println("Token is $token")
     single {
         val password = System.getenv("MONGO_PASSWORD")
         val databaseName = "QuranDatabase"
@@ -38,12 +36,15 @@ val module = module {
 
     single {
         HttpClient(CIO) {
+
+            install(HttpTimeout) {
+                requestTimeoutMillis = 100000
+            }
             install(Auth) {
                 bearer {
                     loadTokens {
                         // Load tokens from a local storage and return them as the 'BearerTokens' instance
-
-                        BearerTokens(token, "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")
+                        BearerTokens(token, token)
                     }
                 }
             }
