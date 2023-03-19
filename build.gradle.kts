@@ -9,14 +9,14 @@ plugins {
     kotlin("jvm") version "1.7.21"
     id("io.ktor.plugin") version "2.1.3"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.7.21"
-    id("com.github.johnrengelman.shadow") version "7.1.2"
+
 
 }
 
-group = "com.example"
+group = "com.crezent"
 version = "0.0.1"
 application {
-    mainClass.set("com.example.ApplicationKt")
+    mainClass.set("com.crezent.ApplicationKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
