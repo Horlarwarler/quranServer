@@ -12,24 +12,48 @@ import io.ktor.util.*
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import java.util.Base64
+import java.time.LocalDate
 
 class GithubJsonFileImplementation(
     private val client: HttpClient
 ) : QuranInterfaceRepo {
 
+    var cachedSurahModel : List<SurahModel>? = null
+    var cachedAyahModel: List<AyahModel>? = null
+    var cachedVersion:Double? = null
+    var cachedDate:LocalDate? = null
+    private fun cachedExpire():Boolean {
+        cachedDate?: kotlin.run {
+            return false
+        }
+        val currentTime = LocalDate.now()
+
+        return true
+    }
     override suspend fun getVersion(): Double {
+
+        if (cachedVersion!= null){
+           return  cachedVersion!!
+        }
         val url = "https://raw.githubusercontent.com/Horlarwarler/quranServer/master/files/version.json"
 
         val versionJson = client.get(url)
         val response = versionJson.body<VersionModel>()
-        return response.version
+        cachedVersion = response.version
+        return cachedVersion!!
     }
 
     override suspend fun getQuran(surahId: Int?, verseId: Int?): List<AyahModel> {
         val url = "https://raw.githubusercontent.com/Horlarwarler/quranServer/master/files/quran.json"
-        val quranJson = client.get(url)
-        val quran = quranJson.body<Ayahs>().data
+        lateinit var quran:List<AyahModel>
+        if (cachedAyahModel != null){
+            quran =   cachedAyahModel!!
+        }
+        else{
+            val quranJson = client.get(url)
+            quran = quranJson.body<Ayahs>().data
+            cachedAyahModel = quran
+        }
         return when{
             surahId != null && verseId != null ->{
                 quran.filter {
@@ -50,17 +74,13 @@ class GithubJsonFileImplementation(
     override suspend fun updateQuran(updateQuran: List<AyahModel>) {
 
         try {
-            println("Updated version 1" )
 
             val url = "https://api.github.com/repos/Horlarwarler/quranServer/contents/files/quran.json"
             val quranGithub = client.get(url)
-           val quranGithubModel = quranGithub.body<GithubResponse>()
-            val content = quranGithubModel.content
-            println("Updated version 2" )
+            val quranGithubModel = quranGithub.body<GithubResponse>()
+            val quran = getQuran()
+            val  newUpdatedQuran = quran.updateQuran(updateQuran)
 
-            val decodedString = content.decodeBase64String()
-            val decodeToAyah = Json.decodeFromString<Ayahs>(decodedString).data
-            val newUpdatedQuran = decodeToAyah.updateQuran(updateQuran)
             val updatedQuran = Ayahs(
                 newUpdatedQuran
             )
@@ -72,8 +92,7 @@ class GithubJsonFileImplementation(
                 sha = quranGithubModel.sha
             )
             updateContentGithub(url, updateBody)
-
-            println("Updated version Suceess" )
+            cachedAyahModel = newUpdatedQuran
             updateVersion()
         }
 
@@ -104,7 +123,7 @@ class GithubJsonFileImplementation(
             sha = versionGithubModel.sha
         )
         updateContentGithub(url, updateBody)
-        println("Updated version $encodedToBase64" )
+        cachedVersion = versionModel.version
 
     }
 
@@ -120,8 +139,12 @@ class GithubJsonFileImplementation(
     }
 
     override suspend fun getSurah(): List<SurahModel> {
+        if (cachedSurahModel != null){
+            return  cachedSurahModel!!
+        }
         val surahJson = client.get("https://raw.githubusercontent.com/Horlarwarler/quranServer/master/files/surah.json")
-       return surahJson.body<Surahs>().data
+        cachedSurahModel = surahJson.body<Surahs>().data
+        return cachedSurahModel!!
 
     }
 }
