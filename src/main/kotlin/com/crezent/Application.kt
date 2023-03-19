@@ -8,7 +8,7 @@ import com.crezent.plugins.*
 fun main(args: Array<String>) {
 
     embeddedServer(
-        Netty, port = 8080, host = "192.168.122.1", module = Application::module)
+        Netty, port = 8080, host = "0.0.0.0", module = Application::module)
         .start(wait = true)
 }
 
