@@ -16,9 +16,9 @@ fun Routing.userRouting(
    get("/version"){
        try {
            val currentVersion = quranInterfaceRepo.getVersion()
-           val version = VersionModel(version = currentVersion).version
+
            call.respond(
-               HttpStatusCode.OK, VersionModel(version = version)
+               HttpStatusCode.OK, VersionModel(version = currentVersion)
            )
        }
        catch (e:Exception){

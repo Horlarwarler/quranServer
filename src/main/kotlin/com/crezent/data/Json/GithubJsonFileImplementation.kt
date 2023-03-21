@@ -39,7 +39,8 @@ class GithubJsonFileImplementation(
 
         val versionJson = client.get(url)
         val response = versionJson.body<VersionModel>()
-        cachedVersion = response.version
+        val roundVersion = response.version.roundUp(1)
+        cachedVersion = roundVersion
         return cachedVersion!!
     }
 
