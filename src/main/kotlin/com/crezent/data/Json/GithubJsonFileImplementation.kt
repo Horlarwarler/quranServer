@@ -115,7 +115,6 @@ class GithubJsonFileImplementation(
         val version = Json.decodeFromString<VersionModel>(decodedString )
         val roundVersion = version.version.roundUp(1)
         val versionModel = VersionModel(version = roundVersion + 0.1)
-        println(versionModel)
         val encodedToString = Json.encodeToString(versionModel)
         val encodedToBase64 = encodedToString.encodeBase64()
         val updateBody = GithubUpdateModel(
@@ -136,7 +135,6 @@ class GithubJsonFileImplementation(
             )
         }
 
-        println("Result is ${result.status.value}")
     }
 
     override suspend fun getSurah(): List<SurahModel> {

@@ -22,7 +22,6 @@ import org.litote.kmongo.reactivestreams.KMongo
 val module = module {
 
     val token = System.getenv("ACCESS_TOKEN")!!
-    println("Token is $token")
     single {
         val password = System.getenv("MONGO_PASSWORD")
         val databaseName = "QuranDatabase"
