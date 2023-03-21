@@ -55,6 +55,8 @@ dependencies {
     implementation ("org.litote.kmongo:kmongo-coroutine:$kmongo_version")
     implementation ("org.litote.kmongo:kmongo:$kmongo_version")
 
+    //
+    implementation("io.ktor:ktor-server-cors:$ktor_version")
 
 
 
