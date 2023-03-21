@@ -2,10 +2,13 @@ package com.crezent.plugins
 
 import io.ktor.http.*
 import io.ktor.server.application.*
-import io.ktor.server.plugins.cors.*
+import io.ktor.server.plugins.cors.routing.*
 
 fun Application.configureCors(){
     install(CORS){
+        allowHeader(HttpHeaders.AccessControlAllowOrigin)
+        allowHeader(HttpHeaders.AccessControlAllowHeaders)
+        allowHeader(HttpHeaders.ContentType)
         anyHost()
         allowMethod(HttpMethod.Options)
         allowMethod(HttpMethod.Put)
@@ -13,6 +16,6 @@ fun Application.configureCors(){
         allowMethod(HttpMethod.Get)
         allowMethod(HttpMethod.Post)
         allowHeader(HttpHeaders.ContentType)
-
+        allowCredentials = true
     }
 }
