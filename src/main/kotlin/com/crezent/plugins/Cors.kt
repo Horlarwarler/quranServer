@@ -10,7 +10,8 @@ fun Application.configureCors(){
         allowMethod(HttpMethod.Options)
         allowMethod(HttpMethod.Put)
         allowMethod(HttpMethod.Patch)
-        allowMethod(HttpMethod.Delete)
+        allowMethod(HttpMethod.Get)
+        allowMethod(HttpMethod.Post)
         allowHeader(HttpHeaders.ContentType)
 
     }
