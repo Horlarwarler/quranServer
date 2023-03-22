@@ -39,6 +39,7 @@ dependencies {
     implementation("io.ktor:ktor-client-content-negotiation:2.1.3")
     implementation("io.ktor:ktor-serialization-gson:2.1.3")
     implementation("io.ktor:ktor-client-auth:2.1.3")
+    implementation("io.ktor:ktor-server-cors-jvm:2.1.3")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 
