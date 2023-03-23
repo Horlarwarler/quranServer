@@ -1,7 +1,6 @@
 package com.crezent.data.di
 
-import com.crezent.data.FileHelper.JsonHelperImplementation
-import com.crezent.data.FileHelper.JsonHelperInterface
+
 import com.crezent.data.Json.GithubJsonFileImplementation
 import com.crezent.data.repository.QuranInterfaceRepo
 import com.crezent.jwt.JwtImplementation
@@ -59,9 +58,7 @@ val module = module {
         }
     }
 
-    single<JsonHelperInterface> {
-        JsonHelperImplementation()
-    }
+
     single<QuranInterfaceRepo> {
         GithubJsonFileImplementation(get())
         //RepoJsonImplementation(get())

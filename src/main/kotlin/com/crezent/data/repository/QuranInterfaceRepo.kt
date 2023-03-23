@@ -8,5 +8,7 @@ interface QuranInterfaceRepo {
     suspend fun getQuran(surahId:Int? = null, verseId:Int? = null): List<AyahModel>
     suspend fun updateQuran(updateQuran: List<AyahModel>)
     suspend fun getSurah(): List<SurahModel>
+
+    suspend fun updateVersion()
     //suspend fun getAyah(uniqueId:Int): AyahModel
 }

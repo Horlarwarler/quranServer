@@ -94,7 +94,6 @@ class GithubJsonFileImplementation(
             )
             updateContentGithub(url, updateBody)
             cachedAyahModel = newUpdatedQuran
-            updateVersion()
         }
 
         catch (error:Exception){
@@ -104,7 +103,10 @@ class GithubJsonFileImplementation(
 
     }
 
-    private suspend fun updateVersion(){
+
+
+    override suspend fun updateVersion(){
+
         val url = "https://api.github.com/repos/Horlarwarler/quranServer/contents/files/version.json"
 
         val versionGithub = client.get(url)
@@ -128,7 +130,7 @@ class GithubJsonFileImplementation(
     }
 
     private suspend fun updateContentGithub(url:String, updateBody:GithubUpdateModel){
-       val result =  client.put(url){
+        client.put(url){
             contentType(ContentType.Application.Json)
             setBody(
                 updateBody

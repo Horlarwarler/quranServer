@@ -39,6 +39,17 @@ fun Routing.adminRouting(
            call.respond(HttpStatusCode.OK)
        }
 
+       put("/update-version"){
+           try{
+               quranInterfaceRepo.updateVersion()
+               call.respond(HttpStatusCode.OK)
+           }
+           catch(error:Exception){
+               val errorMessage = error.message?:"Unknown Error "
+               call.respond(HttpStatusCode.BadRequest, errorMessage)
+           }
+       }
+
    }
 
 
