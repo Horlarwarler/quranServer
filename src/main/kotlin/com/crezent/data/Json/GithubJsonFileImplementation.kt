@@ -113,7 +113,10 @@ class GithubJsonFileImplementation(
         val bigVersion = BigDecimal("$roundVersion")
 
         val newVersion = bigVersion.add(BigDecimal("0.1")).toDouble()
+
+        println("new version $newVersion")
         val versionModel = VersionModel(version = newVersion)
+        println("version model $versionModel")
         val encodedToString = Json.encodeToString(versionModel)
         val encodedToBase64 = encodedToString.encodeBase64()
         val updateBody = GithubUpdateModel(
