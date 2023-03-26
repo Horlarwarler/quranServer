@@ -8,11 +8,15 @@ import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.http.*
+
 import io.ktor.util.*
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import java.math.BigDecimal
 import java.time.LocalDate
+
+import kotlin.math.round
 
 class GithubJsonFileImplementation(
     private val client: HttpClient
@@ -106,10 +110,12 @@ class GithubJsonFileImplementation(
         println(decodedString)
         val version = Json.decodeFromString<VersionModel>(decodedString )
         val roundVersion = version.version.roundUp(1)
-        val versionModel = VersionModel(version = roundVersion + 0.1)
+        val bigVersion = BigDecimal("$roundVersion")
+
+        val newVersion = bigVersion.add(BigDecimal("0.1")).toDouble()
+        val versionModel = VersionModel(version = newVersion)
         val encodedToString = Json.encodeToString(versionModel)
         val encodedToBase64 = encodedToString.encodeBase64()
-        println("Version is ${versionModel.version}")
         val updateBody = GithubUpdateModel(
             message = "Updated Version ",
             content = encodedToBase64,
