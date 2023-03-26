@@ -11,18 +11,11 @@ fun List<AyahModel>.findAyah(uniqueId:Int): AyahModel{
 
 
 }
-fun List<AyahModel>.updateQuran(updatedQuran:List<AyahModel>): List<AyahModel>{
+fun List<AyahModel>.updateQuran(ayahModel:AyahModel): List<AyahModel>{
     val newQuranValues: MutableList<AyahModel> = this.toMutableList()
-    val quranToUpdate = mutableListOf<AyahModel>()
-    updatedQuran.forEach {
-        val ayahToUpdate = this.findAyah(it._id)
-        quranToUpdate.add(ayahToUpdate)
-    }
-    newQuranValues.removeAll(quranToUpdate)
-    updatedQuran.forEach {
-        val index = it._id -1
-        newQuranValues.add(index,it )
-    }
+    val index = ayahModel._id -1
+    newQuranValues.remove(ayahModel)
+    newQuranValues.add(index,ayahModel)
     return newQuranValues.toList()
 
 }

@@ -8,6 +8,7 @@ import com.crezent.domain.model.UserModel
 import com.crezent.jwt.JwtClaim
 import com.crezent.jwt.JwtConfig
 import com.crezent.jwt.JwtInterface
+import io.ktor.client.plugins.*
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
@@ -24,7 +25,7 @@ fun Routing.adminRouting(
    authenticate {
        put("/update") {
            try {
-               val receivedUpdated = call.receive<List<AyahModel>>()
+               val receivedUpdated = call.receive<AyahModel>()
                quranInterfaceRepo.updateQuran(receivedUpdated)
                call.respond(HttpStatusCode.OK)
 

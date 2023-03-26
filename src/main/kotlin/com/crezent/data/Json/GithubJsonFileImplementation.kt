@@ -72,35 +72,24 @@ class GithubJsonFileImplementation(
         }
     }
 
-    override suspend fun updateQuran(updateQuran: List<AyahModel>) {
-
-        try {
-
-            val url = "https://api.github.com/repos/Horlarwarler/quranServer/contents/files/quran.json"
-            val quranGithub = client.get(url)
-            val quranGithubModel = quranGithub.body<GithubResponse>()
-            val quran = getQuran()
-            val  newUpdatedQuran = quran.updateQuran(updateQuran)
-
-            val updatedQuran = Ayahs(
-                newUpdatedQuran
-            )
-            val encodedToString = Json.encodeToString(updatedQuran)
-            val encodedToBase64 =  encodedToString.encodeBase64()
-            val updateBody = GithubUpdateModel(
-                message = "Update Quran ",
-                content = encodedToBase64,
-                sha = quranGithubModel.sha
-            )
-            updateContentGithub(url, updateBody)
-            cachedAyahModel = newUpdatedQuran
-        }
-
-        catch (error:Exception){
-            println("Updated version ${error.message}" )
-        }
-
-
+    override suspend fun updateQuran(ayahModel: AyahModel) {
+        val url = "https://api.github.com/repos/Horlarwarler/quranServer/contents/files/quran.json"
+        val quranGithub = client.get(url)
+        val quranGithubModel = quranGithub.body<GithubResponse>()
+        val quran = getQuran()
+        val  newUpdatedQuran = quran.updateQuran(ayahModel)
+        val updatedQuran = Ayahs(
+            newUpdatedQuran
+        )
+        val encodedToString = Json.encodeToString(updatedQuran)
+        val encodedToBase64 =  encodedToString.encodeBase64()
+        val updateBody = GithubUpdateModel(
+            message = "Update Quran ",
+            content = encodedToBase64,
+            sha = quranGithubModel.sha
+        )
+        updateContentGithub(url, updateBody)
+        cachedAyahModel = newUpdatedQuran
     }
 
 
@@ -114,11 +103,13 @@ class GithubJsonFileImplementation(
         val content = versionGithubModel.content
 
         val decodedString = content.decodeBase64String()
+        println(decodedString)
         val version = Json.decodeFromString<VersionModel>(decodedString )
         val roundVersion = version.version.roundUp(1)
         val versionModel = VersionModel(version = roundVersion + 0.1)
         val encodedToString = Json.encodeToString(versionModel)
         val encodedToBase64 = encodedToString.encodeBase64()
+        println("Version is ${versionModel.version}")
         val updateBody = GithubUpdateModel(
             message = "Updated Version ",
             content = encodedToBase64,
