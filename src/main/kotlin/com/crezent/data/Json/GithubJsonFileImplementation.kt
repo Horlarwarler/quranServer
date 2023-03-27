@@ -25,15 +25,7 @@ class GithubJsonFileImplementation(
     var cachedSurahModel : List<SurahModel>? = null
     var cachedAyahModel: List<AyahModel>? = null
     var cachedVersion:Double? = null
-    var cachedDate:LocalDate? = null
-    private fun cachedExpire():Boolean {
-        cachedDate?: kotlin.run {
-            return false
-        }
-        val currentTime = LocalDate.now()
 
-        return true
-    }
     override suspend fun getVersion(): Double {
 
         if (cachedVersion!= null){
@@ -107,16 +99,12 @@ class GithubJsonFileImplementation(
         val content = versionGithubModel.content
 
         val decodedString = content.decodeBase64String()
-        println(decodedString)
         val version = Json.decodeFromString<VersionModel>(decodedString )
         val roundVersion = version.version.roundUp(1)
         val bigVersion = BigDecimal("$roundVersion")
 
         val newVersion = bigVersion.add(BigDecimal("0.1")).toDouble()
-
-        println("new version $newVersion")
         val versionModel = VersionModel(version = newVersion)
-        println("version model $versionModel")
         val encodedToString = Json.encodeToString(versionModel)
         val encodedToBase64 = encodedToString.encodeBase64()
         val updateBody = GithubUpdateModel(
